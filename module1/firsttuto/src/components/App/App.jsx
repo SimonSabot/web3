@@ -1,8 +1,9 @@
-import React from "react"
+import Header from "components/Header/Header"
+import Content from "components/Content/Content"
+import Total from "components/Total/Total"
 
-import Header from "./components/header/Header"
-import Content from "./components/mainContent/Content"
-import Total from "./components/total/Total"
+
+
 
 const App = () => {
   const part1 = 'Fundamentals of React'
