@@ -1,7 +1,7 @@
 import Header from "components/Header/Header"
 import Content from "components/Content/Content"
 import Total from "components/Total/Total"
-
+import './app.css'
 
 
 
@@ -15,7 +15,7 @@ const App = () => {
 
 
   return (
-    <div>
+    <div className="main">
       <Header />
       <Content part1={part1} exercises1={exercises1} part2= {part2} exercises2 ={exercises2} part3={part3} exercises3 ={exercises3} />
       <Total exercises1={exercises1} exercises2 ={exercises2} exercises3={exercises3} />
