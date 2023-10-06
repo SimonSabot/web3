@@ -1,5 +1,6 @@
 //import CounterFeedback from "components/CounterFeedback/CounterFeedback"
-import Feedback from "components/Feedback/Feedback"
+
+import Loading from "components/Loading/Loading"
 //import CounterFeedback from "components/CounterFeedback/CounterFeedback"
 
 const App = () => {
@@ -12,7 +13,8 @@ const App = () => {
 
   return (
     <div>
-      <Feedback/>
+    <Loading/>
+    
       
     </div>
   )
