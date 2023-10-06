@@ -1,0 +1,9 @@
+.counterfeedback{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  margin: 5mm;
+}
+.counterfeedback >p{
+    margin: 0em;
+}
