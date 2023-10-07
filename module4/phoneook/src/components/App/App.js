@@ -5,13 +5,13 @@ const App = () => {
     { name: 'Arto Hellas' }
   ]) 
   const [newName, setNewName] = useState('')
-
+  let i=0;
   const handleNewNameChange =(e)=>{
     setNewName(e.target.value);
   }
   const addName =(e)=>{
     e.preventDefault();
-   setPersons( persons.concat(newName));
+   setPersons( persons.concat({name:newName}));
    setNewName('');
   }
 
@@ -29,7 +29,9 @@ const App = () => {
         </div>
       </form>
       <h2>Numbers</h2>
-      ...
+      <ul>
+      {persons.map(p=>(<li key={i++}>{p.name}</li>))}
+      </ul>
     </div>
   )
 }
