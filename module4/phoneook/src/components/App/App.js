@@ -1,23 +1,21 @@
 
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+
+import personService from '../../services/persons'
 
 const App = () => {
  
-   
-
   const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState('');
   const [newTel, setNewTel] = useState('');
   let i=0;
 
   useEffect(() => {
-    axios
-      .get('http://localhost:3001/persons')
+   personService.getAll()
       .then(response => {
         setPersons(response.data)
       })
-  }, [])
+  }, [persons])
 
   const handleNewNameChange =(e)=>{
     setNewName(e.target.value);
@@ -30,11 +28,16 @@ const App = () => {
   const addPerson =(e)=>{
     e.preventDefault();
     const bool =(persons.some(p=>(p.name===newName))&& newTel.match("^([0-9]{2}-[0-9]{2}-[0-9]{7})$"));
-    if(!bool){
-   setPersons( persons.concat({name:newName,tel:newTel}));
+    if(bool){
+      alert(`${newName} is already present in the list`);
+   
    
     }else{
-      alert(`${newName} is already present in the list`);
+     const nPerson ={
+      name:newName,
+      number:newTel
+    }
+       personService.create( nPerson).then(p=>(console.log(p)))
     }
    setNewName('');
    setNewTel('');
