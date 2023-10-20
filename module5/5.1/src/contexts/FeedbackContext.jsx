@@ -14,11 +14,19 @@ const ProviderWrapper =(props) =>{
         else if (value==="neutral") setNeutral(neutral+1) ;
         else setBad(bad+1);
     }
+
+    
+    const reset=()=>{
+        setGood(0);
+        setBad(0);
+        setNeutral(0);
+    };
     const exposedValue= {
         good,
         neutral,
         bad,
         handleFeedback,
+        reset
     }
 
     return <Context.Provider value={exposedValue}>

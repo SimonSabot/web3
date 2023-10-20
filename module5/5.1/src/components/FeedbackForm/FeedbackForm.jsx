@@ -1,21 +1,23 @@
-const formField=["good","neutral","bad"];
-
-
+import GoodButton from "components/Button/GoodButton";
+import OkButton from "components/Button/OkButton";
+import BadButton from "components/Button/BadButton";
+import ResetButton from "components/Button/ResetButton";
+//<Button key={index} value={f}/>
 
 
 const FeedbackForm = ()=>{
-
-    let allbutton ="" ;
-    for(i=0;i<formField.length;i++){
-     allbutton.concat(`<Button value =${formField[i]}/>`);
-        }
+    
 
     return(
-        <div>
+        
             <ul>
-        {allbutton}
+
+            <GoodButton />
+            <OkButton/>
+            <BadButton/>
+            <ResetButton />
             </ul>
-        </div>
+       
     ) 
 }
 

@@ -9,3 +9,4 @@ const AppLoader= () => {
       </FeedbackProviderWrapper >
   )
 }
+export default AppLoader;
